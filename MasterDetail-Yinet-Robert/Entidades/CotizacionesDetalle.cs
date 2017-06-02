@@ -16,5 +16,21 @@ namespace MasterDetail_Yinet_Robert.Entidades
         public string Descripcion { get; set; }
         public decimal Cantidad { get; set; }
         public decimal Precio { get; set; }
+
+        public virtual Productos Producto { get; set; }
+        public virtual Cotizaciones Cotizaciones { get; set; } //Uno
+
+        public CotizacionesDetalle()
+        {
+            Producto = new Productos();
+        }
+
+        public CotizacionesDetalle(int productoId, decimal cantidad, decimal precio, string descripcion)
+        {
+            this.Descripcion = descripcion;
+            this.ProductoId = productoId;
+            this.Cantidad = cantidad;
+            this.Precio = precio;
+        }
     }
 }
