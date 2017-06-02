@@ -67,6 +67,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\CotizacionesBLL.cs" />
+    <Compile Include="DAL\ApoyoRepositorio.cs" />
+    <Compile Include="DAL\ClaseGenerica.cs" />
     <Compile Include="DAL\CotizacionesDetailDb.cs" />
     <Compile Include="Entidades\Cotizaciones.cs" />
     <Compile Include="Entidades\CotizacionesDetalle.cs" />
@@ -102,9 +105,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BLL\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="DataBase\CotizacionesDetailDb.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
