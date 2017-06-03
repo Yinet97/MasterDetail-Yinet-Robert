@@ -21,6 +21,7 @@ namespace MasterDetail_Yinet_Robert.Entidades
             this.CotizacionesDetalle = new HashSet<CotizacionesDetalle>();
         }
 
+        //Funcion para cambiar el formato a los datos
         public override string ToString()
         {
             return string.Format("ProductoId: {0}, Descripción: {1}", this.ProductoId, this.Descripcion);
