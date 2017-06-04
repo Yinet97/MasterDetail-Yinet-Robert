@@ -7,9 +7,7 @@ using System.Threading.Tasks;
 
 namespace MasterDetail_Yinet_Robert.DAL
 {
-        /// Sera de un tipo Generico TEntity para que acepte cualquier entidad 
-        /// Tambien Implementamos IDisposable para poder destruirla
-        /// where TEntity:class, finalmente TEntity sera una clase que puede ser null , osea que sea un tipo referencia a final de cuentas.
+        
         public interface ClaseGenerica<TEntity> : IDisposable where TEntity : class
         {
 
@@ -18,8 +16,7 @@ namespace MasterDetail_Yinet_Robert.DAL
             bool Modificar(TEntity laEntidad);
 
             bool Eliminar(TEntity laEntidad);
-
-            /// La expession sera un delegado que es una funcion que permitira buscar por la condicion que definamos
+        
             TEntity Buscar(Expression<Func<TEntity, bool>> criterioBusqueda);
 
             List<TEntity> Lista(Expression<Func<TEntity, bool>> criterioBusqueda);

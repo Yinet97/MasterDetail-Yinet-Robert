@@ -17,13 +17,11 @@ namespace MasterDetail_Yinet_Robert.DAL
         {
             Contex = new CotizacionesDetailDb();
         }
-
-        //propiedad que nos permite acceder al entityset actual con el que se instancion el repositorio
+        
         private DbSet<TEntity> EntitySet
         {
             get
             {
-                //devolver del contexto un entityset, esta es la entidad que necesitamos para realizar las operaciones
                 return Contex.Set<TEntity>();
             }
         }
@@ -52,10 +50,8 @@ namespace MasterDetail_Yinet_Robert.DAL
 
             try
             {
-                //para que el contexto lo considere como si estubiera recien agregado
                 EntitySet.Attach(laEntidad);
-
-                //Para que entityframework sepa que la va a actualizar.
+                
                 Contex.Entry<TEntity>(laEntidad).State = EntityState.Modified;
 
                 Result = Contex.SaveChanges() > 0;
@@ -84,7 +80,6 @@ namespace MasterDetail_Yinet_Robert.DAL
 
             try
             {
-                //para que el contexto lo considere como si estubiera recien agregado
                 EntitySet.Attach(laEntidad);
                 EntitySet.Remove(laEntidad);
                 Result = Contex.SaveChanges() > 0;

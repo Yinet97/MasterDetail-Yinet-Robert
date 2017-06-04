@@ -14,7 +14,7 @@ namespace MasterDetail_Yinet_Robert.Entidades
         public DateTime Fecha { get; set; }
         public double Monto { get; set; }
 
-        public virtual ICollection<CotizacionesDetalle> Detalle { get; set; } //Muchos
+        public virtual ICollection<CotizacionesDetalle> Detalle { get; set; }
 
         public Cotizaciones()
         {

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MasterDetail_Yinet_Robert.DAL;
+using System.Linq.Expressions;
 
 namespace MasterDetail_Yinet_Robert.BLL
 {
@@ -14,10 +15,8 @@ namespace MasterDetail_Yinet_Robert.BLL
         {
             Cotizaciones creado = null;
 
-            using (var repositorio = new Repositorio<Cotizaciones>())
+            using (var repositorio = new ApoyoRepositorio<Cotizaciones>())
             {
-                //todo: validar que el nombre de producto no exista
-
                 creado = repositorio.Guardar(cotizacion);
             }
 
@@ -27,7 +26,7 @@ namespace MasterDetail_Yinet_Robert.BLL
         public static bool Mofidicar(Cotizaciones cotizacion)
         {
             bool eliminado = false;
-            using (var repositorio = new Repositorio<Cotizaciones>())
+            using (var repositorio = new ApoyoRepositorio<Cotizaciones>())
             {
                 eliminado = repositorio.Modificar(cotizacion);
             }
@@ -40,7 +39,7 @@ namespace MasterDetail_Yinet_Robert.BLL
         {
             bool eliminado = false;
 
-            using (var repositorio = new Repositorio<Cotizaciones>())
+            using (var repositorio = new ApoyoRepositorio<Cotizaciones>())
             {
                 eliminado = repositorio.Eliminar(cotizacion);
             }
@@ -52,12 +51,12 @@ namespace MasterDetail_Yinet_Robert.BLL
         {
             Cotizaciones Result = null;
 
-            using (var repositorio = new Repositorio<Cotizaciones>())
+            using (var repositorio = new ApoyoRepositorio<Cotizaciones>())
             {
                 Result = repositorio.Buscar(tipo);
 
                 if (Result != null)
-                    Result.Detalle.Count();//para oblibar el lazyloading a cargar los datos
+                    Result.Detalle.Count();
             }
 
             return Result;

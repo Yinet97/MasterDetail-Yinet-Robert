@@ -18,7 +18,7 @@ namespace MasterDetail_Yinet_Robert.Entidades
         public decimal Precio { get; set; }
 
         public virtual Productos Producto { get; set; }
-        public virtual Cotizaciones Cotizaciones { get; set; } //Uno
+        public virtual Cotizaciones Cotizaciones { get; set; } 
 
         public CotizacionesDetalle()
         {
