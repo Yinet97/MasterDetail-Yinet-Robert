@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MasterDetail_Yinet_Robert.Entidades
 {
-    class Cotizaciones
+    public class Cotizaciones
     {
         [Key]
         public int CotizacionId { get; set; }

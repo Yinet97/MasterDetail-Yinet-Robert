@@ -9,7 +9,7 @@ using System.Linq.Expressions;
 
 namespace MasterDetail_Yinet_Robert.BLL
 {
-    class CotizacionesBLL
+    public class CotizacionesBLL
     {
         public static Cotizaciones Guardar(Cotizaciones cotizacion)
         {
